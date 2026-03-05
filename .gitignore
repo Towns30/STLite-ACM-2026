@@ -13,3 +13,6 @@ CMakeUserPresets.json
 
 build/
 .cache/
+vector/src/code
+vector/src/go
+vector/src/out.txt

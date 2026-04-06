@@ -1,7 +1,7 @@
 #ifndef SJTU_PRIORITY_QUEUE_HPP
 #define SJTU_PRIORITY_QUEUE_HPP
 
-#include <cmath>       // maybe you need it
+#include <cmath>       // in case you need it
 #include <cstddef>     // for size_t
 #include <functional>  // for std::less
 
@@ -10,6 +10,20 @@
 namespace sjtu
 {
 
+/**
+ * @brief A container automatically sorting its contents, similar to
+ * std::priority_queue but with extra functionalities.
+ *
+ * The extra functionalities are:
+ * - Merge two priority queues into one (with good time complexity).
+ * - Clear all elements in the queue.
+ * - Limited exception safety for some operations (e.g. push, pop, top, merge)
+ * when the comparator throws exceptions from `Compare` only.
+ *
+ * This @priority_queue does not support passing an underlying container as a template parameter.
+ * Also, it does not support passing a comparator object as a constructor argument.
+ *
+ */
 template <class T, class Compare = std::less<T>>
 class priority_queue
 {
